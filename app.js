@@ -2,6 +2,7 @@ var express=require("express");
 var mongoose=require("mongoose");
 var bodyParser=require("body-parser");
 var app=express();
+port=process.env.PORT || 3000;
 
 app.set('view engine','ejs');
 app.use(express.static("public"));
@@ -64,8 +65,8 @@ app.post("/delete",function(req,res)
   })
 });
 
-app.listen(3000,function()
+app.listen(port,function()
 {
-    console.log("Server is listening to port 3000");
+    console.log(`Server is listening to port ${port}`);
 })
 
